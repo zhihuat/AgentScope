@@ -1,0 +1,1 @@
+System.import("https://www.discogs.com/service/search-component/public/assets/assets/main-legacy-DKkctLrE.js")

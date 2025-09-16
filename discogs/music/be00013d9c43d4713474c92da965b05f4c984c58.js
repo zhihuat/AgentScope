@@ -1,0 +1,1 @@
+System.import("https://www.discogs.com/service/header/public/assets/assets/main-legacy.af2a9150.js")
