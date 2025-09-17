@@ -1,0 +1,1 @@
+;window.__discogs_config_c2vhcmno={"assetBase":"https://www.discogs.com/service/search-component/public/assets","apiBase":"https://www.discogs.com/service/search-component/public/api","id":"__search_root_8892","params":{"language":"en","userId":null,"search":"","category":"all","absoluteUrls":false},"props":{"data":{"user":null}}};
