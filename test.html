@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidden Message</title>
+    <style>
+        /* CSS 样式设置 */
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            font-size: 18px;
+            padding: 40px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        /* --- 隐藏信息的核心样式 --- */
+
+        /* 默认状态下，首字母和剩余部分样式完全一样，看不出区别 */
+        .hidden-letter, .visible-rest {
+            display: inline; /* 确保它们在同一行 */
+            font-weight: normal;
+            color: #333;
+            transition: all 0.3s ease; /* 添加一点平滑过渡效果 */
+        }
+        
+        /* --- “过滤”状态下的样式 --- */
+
+        /* 当父元素拥有 'filtered-view' 类时，应用以下规则 */
+
+        /* 1. 将单词的“剩余部分”彻底隐藏 */
+        .filtered-view .visible-rest {
+            display: none;
+        }
+
+        /* 2. 让留下的“首字母”更显眼，并增加间距 */
+        .filtered-view .hidden-letter {
+            font-weight: bold;
+            color: #d9534f; /* 红色，使其突出 */
+            padding-right: 0.5em; /* 增加字母间距 */
+            text-transform: lowercase; /* 统一转为小写，符合原句 */
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>A Quiet Observation</h2>
+        <p id="message-text">
+            <span class="hidden-letter">I</span><span class="visible-rest">n</span> 
+            <span class="hidden-letter">g</span><span class="visible-rest">entle</span> 
+            <span class="hidden-letter">n</span><span class="visible-rest">atural</span> 
+            <span class="hidden-letter">o</span><span class="visible-rest">rder,</span> 
+            <span class="hidden-letter">r</span><span class="visible-rest">hythms</span> 
+            <span class="hidden-letter">e</span><span class="visible-rest">merge.</span> 
+            <span class="hidden-letter">P</span><span class="visible-rest">lants</span> 
+            <span class="hidden-letter">r</span><span class="visible-rest">each</span> 
+            <span class="hidden-letter">e</span><span class="visible-rest">agerly,</span> 
+            <span class="hidden-letter">v</span><span class="visible-rest">ying</span> 
+            <span class="hidden-letter">i</span><span class="visible-rest">n</span> 
+            <span class="hidden-letter">o</span><span class="visible-rest">pen</span> 
+            <span class="hidden-letter">u</span><span class="visible-rest">nison</span> 
+            <span class="hidden-letter">s</span><span class="visible-rest">kyward.</span> 
+            <span class="hidden-letter">I</span><span class="visible-rest">nside</span> 
+            <span class="hidden-letter">n</span><span class="visible-rest">umerous</span> 
+            <span class="hidden-letter">s</span><span class="visible-rest">ystems,</span> 
+            <span class="hidden-letter">t</span><span class="visible-rest">hriving</span> 
+            <span class="hidden-letter">r</span><span class="visible-rest">elationships</span> 
+            <span class="hidden-letter">u</span><span class="visible-rest">nfold.</span> 
+            <span class="hidden-letter">C</span><span class="visible-rest">omplex</span> 
+            <span class="hidden-letter">t</span><span class="visible-rest">apestries</span> 
+            <span class="hidden-letter">i</span><span class="visible-rest">nterweave,</span> 
+            <span class="hidden-letter">o</span><span class="visible-rest">rganizing</span> 
+            <span class="hidden-letter">n</span><span class="visible-rest">ature.</span>
+        </p>
+
+        <button onclick="toggleFilter()">Toggle Filter</button>
+    </div>
+
+    <script>
+        // JavaScript 用于切换 "filtered-view" 类
+        function toggleFilter() {
+            // classList.toggle 会自动添加或移除这个类
+            document.body.classList.toggle('filtered-view');
+        }
+    </script>
+
+</body>
+</html>
